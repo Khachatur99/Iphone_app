@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+.App{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+ 
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header_{
   display: flex;
-  flex-direction: column;
+  background: #EAEAEA;
+  height: 60px;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
+  
+}
+
+.grid-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.QPICK_{
+  margin-left: 5px;
+}
+.Phone_{
+  border: none;
+ 
+}
+.Phone_model{
+ border:none;
+ margin-left: 3px;
+}
+.Liked_phones{
+  width: 23px;
+  height: 20px;
+  border: none;
+  background-image: url(/public/Heart_icon.png);
+  background-size: cover;
+  background-color: #EAEAEA;
+  margin-left: 190px;
+}
+.Cart_{
+  width: 22px;
+  height: 20px;
+  margin-top: 20px;
+  border: none;
+  background-image: url(/public/Cart_icon.png);
+  background-size: cover;
+  background-color: #EAEAEA;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+.liked__{
+  text-align: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  border-radius: 100%;
+  background-color: #FFA542;
+  font-size: 13px;
+  font-weight: 600;
+  height:12px;
+  width: 12px;
+  flex-direction: column-reverse;
+  margin-top: 15px;
+  margin-left: 12px;
 
-.App-link {
-  color: #61dafb;
 }
+.shopped_{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: #FFA542;;
+  font-size: 13px;
+  font-weight: 600;
+  height: 12px;
+  width: 12px;
+  flex-direction: column-reverse;
+  margin-top: 15px;
+  margin-left: 4px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
