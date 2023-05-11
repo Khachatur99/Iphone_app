@@ -33,5 +33,12 @@
 
 .price {
     color: #FFA542;
-
+}
+.add_cart{
+    cursor: pointer;
+    color: red;
+    background-color: #fff;
+    margin-left: 124px;
+    padding-right: 0px;
+    border: none;
 }

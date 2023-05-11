@@ -21,28 +21,46 @@ flex-wrap: wrap;
 }
 .QPICK_{
   margin-left: 5px;
+  cursor: pointer;
 }
 .Phone_{
   border: none;
- 
+  
+  background-color: #EAEAEA;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 .Phone_model{
- border:none;
+ border: solid 2px rgb(0, 0, 0);
  margin-left: 3px;
+ background-color: #EAEAEA;
+ width: 120px;
+ text-align: center;
+
+}
+.liked_cart{
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+
 }
 .Liked_phones{
-  width: 23px;
+  
+  width: 24px;
   height: 20px;
   border: none;
   background-image: url(/public/Heart_icon.png);
   background-size: cover;
   background-color: #EAEAEA;
-  margin-left: 190px;
+ 
 }
 .Cart_{
-  width: 22px;
+  width: 24px;
   height: 20px;
-  margin-top: 20px;
   border: none;
   background-image: url(/public/Cart_icon.png);
   background-size: cover;

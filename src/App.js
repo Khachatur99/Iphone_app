@@ -4,6 +4,9 @@ import './App.css';
 import Product from './components/Product';
 
 
+
+
+
 function App() {
   const [allProducts, setAllProducts] = useState([]);
   const[category, setCategory] = useState("All")
@@ -20,18 +23,11 @@ function App() {
       const filterItems = allProducts.filter(product => {
         return product.category === category
       })
-      console.log(filterItems)
-
       setFilteredProducts(filterItems)
     } else {
       setFilteredProducts([]);
     }
   },[allProducts, category])
-
-  useEffect(() => {
-    console.log('filteredProducts', filteredProducts);
-  }, [filteredProducts])
-
 
 
   return (
@@ -39,29 +35,33 @@ function App() {
     <div className="App">
       <div className='header_'>
        <div className='QPICK_'> QPICK</div>
-       <input type='checkbox' />
-      
+       {/* <input type='checkbox' /> */}
        <button className='Phone_'> 
-         Select Phone 
+         
            <select className='Phone_model'  defaultValue="All" onChange={(evt)=>{
             setCategory(evt.target.value)
            }} >
-            <option value="jewelery">Jewelery</option>
-            <option value="">Phone</option>
             <option value="All">All</option>
-            <option value="">Cart_</option>
-            <option value="">className</option>
-            <option value="">Phoassne</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="electronics">  Electronics
+            </option>
+            <option value="women's clothing"> Women's 
+             Clothing </option>
+            <option value="men's clothing"> Men's Clothing
+             </option>
 
           </select>
         </button>
-       <button className='Liked_phones'>
-       <span className='liked__'>0</span>
-       </button>
+        <div className='liked_cart'>
+          <button className='Liked_phones'>
+            <span className='liked__'>0</span>
+          </button>
+          
+          <button className='Cart_'> 
+            <span className='shopped_'>0</span>
+          </button>
+        </div>
        
-       <button className='Cart_'> 
-       <span className='shopped_'>0</span>
-       </button>
        
       </div>
       {filteredProducts.length === 0 && (
@@ -81,7 +81,7 @@ function App() {
     
     </div>
   
-  );
-}
-
+        );
+      }
+      
 export default App;
