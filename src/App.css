@@ -98,3 +98,23 @@ flex-wrap: wrap;
   margin-left: 4px;
 
 }
+@media (max-width:500px) {
+  .grid-container{
+    gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .Phone_model{
+    display: none;
+  }
+  .App{
+    width: 500px;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  .header_{
+    margin: 0px 10px;
+  }
+  
+}

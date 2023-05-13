@@ -42,3 +42,12 @@
     padding-right: 0px;
     border: none;
 }
+
+@media (max-width:500px) {
+    .Product>img{
+      width: 320px;
+      height: 328px;
+  
+    }
+  }
+  
