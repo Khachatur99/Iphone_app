@@ -21,11 +21,18 @@ flex-wrap: wrap;
 }
 .QPICK_{
   margin-left: 5px;
-  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background-color: #EAEAEA;
+}
+.QPICK_>a{
+  text-decoration: none;
+  color: black;
 }
 .Phone_{
   border: none;
-  
+  display: flex;
+ 
   background-color: #EAEAEA;
   font-family: Montserrat;
   font-size: 15px;
@@ -49,7 +56,7 @@ flex-wrap: wrap;
 
 }
 .Liked_phones{
-  
+  cursor: pointer;
   width: 24px;
   height: 20px;
   border: none;
@@ -67,6 +74,7 @@ flex-wrap: wrap;
   background-color: #EAEAEA;
   margin-bottom: 20px;
   margin-right: 10px;
+  cursor: pointer;
 }
 .liked__{
   text-align: center;
@@ -96,6 +104,7 @@ flex-wrap: wrap;
   flex-direction: column-reverse;
   margin-top: 15px;
   margin-left: 4px;
+ 
 
 }
 @media (max-width:500px) {
