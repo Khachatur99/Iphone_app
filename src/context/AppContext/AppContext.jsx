@@ -8,9 +8,11 @@ const AppProvider = ({ children }) => {
   
   const [wishListState, setWishListState]= useState([])
   const [cartListState, setCartListState]= useState([])
+  const [allProducts, setAllProducts]= useState([])
+
 
   return (
-    <AppContext.Provider value={{wishListState, setWishListState, cartListState, setCartListState }}>
+    <AppContext.Provider value={{wishListState, setWishListState, cartListState, setCartListState, allProducts, setAllProducts }}>
       {children}
     </AppContext.Provider>
   );

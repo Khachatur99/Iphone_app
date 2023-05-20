@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 
-import { useAppContext } from "../context/AppContext/AppContext";
+import { useAppContext } from "../../context/AppContext/AppContext";
 import { Link } from "react-router-dom";
 
 
 
 function LayOut({ category, setCategory, children, hideFilter}) {
   const [allProducts, setAllProducts] = useState([]);
-//   const [category, setCategory] = useState("All");
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [ , setFilteredProducts] = useState([]);
+  const [registr, setRegistr] = useState(false)
  const { cartListState, wishListState, }=useAppContext()
-
+  
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => {
         return res.json();
+        
       })
       .then((res) => setAllProducts(res));
   }, []);
@@ -36,7 +37,6 @@ function LayOut({ category, setCategory, children, hideFilter}) {
     <>
       <div className="header_">
         <button className="QPICK_">
-        
           <Link to={"/"}>QPICK</Link>
         </button>
         <button className="Phone_">
@@ -76,6 +76,18 @@ function LayOut({ category, setCategory, children, hideFilter}) {
             
           </button>
           </Link>
+          <div className="registration" onClick={()=>{return setRegistr(!registr)}} >
+            {registr && <div>
+              <h4>Welcome</h4>
+             <span>To access wishlist or cart</span> 
+             <Link to="/Registration">
+             <button>Sign In</button>
+             </Link>
+
+            </div> }
+            
+
+          </div>
         </div>
       </div>
             <div>{children}</div>

@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 
 import Product from "../components/Product/Product";
-import LayOut from "./LayOut";
+import LayOut from "../components/Product/LayOut";
 import { useAppContext } from "../context/AppContext/AppContext";
 
 
 function HomePage() {
   
-  const [allProducts, setAllProducts] = useState([]);
+  // const [allProducts, setAllProducts] = useState([]);
   const [category, setCategory] = useState("All");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const { setCartListState, cartListState, setWishListState } = useAppContext();
+  const { setCartListState, cartListState, setWishListState, allProducts, setAllProducts } = useAppContext();
 
-  console.log()
+
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -21,7 +21,7 @@ function HomePage() {
         return res.json();
       })
       .then((res) => setAllProducts(res));
-  }, []);
+  }, [setAllProducts]);
 
   useEffect(() => {
     if (category !== "All") {
@@ -52,6 +52,7 @@ function HomePage() {
         <div className="grid-container">
           {filteredProducts?.map((product) => (
             <Product
+            id={product.id}
               key={product.id}
               image={product.image}
               title={product.title}
@@ -59,6 +60,7 @@ function HomePage() {
               price={product.price}
               addCart={() => addCart(product)}
               addWishList={() => addWishList(product)}
+             
             />
           ))}
         </div>

@@ -1,4 +1,4 @@
-import LayOut from "./LayOut"
+import LayOut from "../components/Product/LayOut"
 import { useAppContext } from "../context/AppContext/AppContext";
 import Product from "../components/Product/Product";
 
