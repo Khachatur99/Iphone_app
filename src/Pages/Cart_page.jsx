@@ -17,7 +17,7 @@ function CartPage(){
          rating={product.rating.rate}
          price={product.price}
          hideActions
-         removeItem
+         removeCart
          />
         
           ))}

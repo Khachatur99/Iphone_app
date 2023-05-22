@@ -6,7 +6,7 @@ import Product from "../components/Product/Product";
 
 function WishList(){
     const{wishListState}=useAppContext()
-
+    
     return(
      <LayOut hideFilter>
     < div className="grid-container" >
@@ -19,7 +19,7 @@ function WishList(){
          rating={product.rating.rate}
          price={product.price}
          hideActions
-         removeItem
+         removeWish
          />
         
           ))}

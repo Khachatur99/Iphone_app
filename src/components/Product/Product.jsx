@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import "./product.css";
+import { useAppContext } from "../../context/AppContext/AppContext";
 
-function Product({ id, title, price, rating, image, addCart, addWishList, hideActions, removeItem,  }) {
- 
+function Product({ id, title, price, rating, image, addCart, addWishList, hideActions, removeWish, removeCart}) {
+  const {wishListState, setWishListState} = useAppContext()
+  const {cartListState, setCartListState} = useAppContext()
   return (
     <div className="Product">
       <Link to={`/${id}`}>
@@ -20,11 +22,37 @@ function Product({ id, title, price, rating, image, addCart, addWishList, hideAc
       </button>
       <button className="Wish_List" onClick={addWishList}> Wishlist </button>
       </>}
-      {removeItem && 
-      <button className="remove_item" 
-      
-      > Remove </button>
+      {removeWish &&
+      <button className="remove_item" onClick={(id)=>{
+         // eslint-disable-next-line array-callback-return
+         wishListState.map((arr)=>{
+          if(arr.id !== id){
+            const remove = wishListState.filter((a)=>{
+              return a.id === id
+            })
+            setWishListState(remove)
+           }else{
+            return wishListState
+           }
+        })
+      }} > Remove </button>
       }
+      {removeCart &&
+      <button className="remove_item" onClick={(id)=>{
+         // eslint-disable-next-line array-callback-return
+         cartListState.map((arr)=>{
+          if(arr.id !== id){
+            const remove = cartListState.filter((a)=>{
+              return a.id === id
+            })
+            setCartListState(remove)
+           }else{
+            return cartListState
+           }
+        })
+      }} > Remove </button>
+      }
+
 
     </div>
   );
