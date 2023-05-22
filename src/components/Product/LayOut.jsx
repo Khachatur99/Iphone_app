@@ -85,8 +85,6 @@ function LayOut({ category, setCategory, children, hideFilter}) {
              </Link>
 
             </div> }
-            
-
           </div>
         </div>
       </div>

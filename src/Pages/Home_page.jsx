@@ -60,6 +60,7 @@ function HomePage() {
               price={product.price}
               addCart={() => addCart(product)}
               addWishList={() => addWishList(product)}
+              
              
             />
           ))}

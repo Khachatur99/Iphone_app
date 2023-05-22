@@ -62,3 +62,12 @@
     cursor: pointer;
     font-size: 18px;
 }
+.remove_item{
+  border: none;
+  background-color: #fff;
+  margin-left: 120px;
+  cursor: pointer;
+  font-size: 17px;
+  color: rgba(255, 0, 0, 0.566);
+ 
+}

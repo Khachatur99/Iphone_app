@@ -10,12 +10,14 @@ function CartPage(){
     < div className="grid-container" >
         {cartListState.map((product)=>(
         <Product
+        id={product.id}
          key={product.id}
          image={product.image}
          title={product.title}
          rating={product.rating.rate}
          price={product.price}
          hideActions
+         removeItem
          />
         
           ))}

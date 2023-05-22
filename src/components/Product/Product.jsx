@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./product.css";
 
-function Product({ id, title, price, rating, image, addCart, addWishList, hideActions }) {
+function Product({ id, title, price, rating, image, addCart, addWishList, hideActions, removeItem,  }) {
+ 
   return (
     <div className="Product">
       <Link to={`/${id}`}>
@@ -19,6 +20,12 @@ function Product({ id, title, price, rating, image, addCart, addWishList, hideAc
       </button>
       <button className="Wish_List" onClick={addWishList}> Wishlist </button>
       </>}
+      {removeItem && 
+      <button className="remove_item" 
+      
+      > Remove </button>
+      }
+
     </div>
   );
 }
