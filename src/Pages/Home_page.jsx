@@ -33,11 +33,13 @@ function HomePage() {
       setFilteredProducts(allProducts);
     }
   }, [allProducts, category]);
+
   const addCart = (item) => {
-    setCartListState((prevCart) => {
-      return [...prevCart, item];
+  setCartListState((prevCart) => {
+       return [...prevCart, item]
     });
-  };
+    }
+  
   const addWishList = (item) => {
     setWishListState((prevCart) => {
       return [...prevCart, item];
@@ -60,7 +62,6 @@ function HomePage() {
               price={product.price}
               addCart={() => addCart(product)}
               addWishList={() => addWishList(product)}
-              
              
             />
           ))}

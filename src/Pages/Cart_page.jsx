@@ -1,26 +1,21 @@
+/* eslint-disable jsx-a11y/alt-text */
 import LayOut from "../components/Product/LayOut"
 import { useAppContext } from "../context/AppContext/AppContext";
-import Product from "../components/Product/Product";
 
 function CartPage(){
-    const{cartListState}=useAppContext()
+    const{cartListState, removehandler2}=useAppContext()
    
     return(
      <LayOut hideFilter>
     < div className="grid-container" >
-        {cartListState.map((product)=>(
-        <Product
-        id={product.id}
-         key={product.id}
-         image={product.image}
-         title={product.title}
-         rating={product.rating.rate}
-         price={product.price}
-         hideActions
-         removeCart
-         />
+        {cartListState.map((item)=>{
+            return(
+                <div key={item.id}> <h1>{item.title}</h1><img style={{width: '150px'}} src={item.image} />   
         
-          ))}
+                <button onClick={() => removehandler2(item)}>Remove</button>
+               </div>  
+            )
+        })}
            </div>
      </LayOut>
     )
