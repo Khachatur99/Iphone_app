@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from 'react';
 
-// Create the AppContext
+
 const AppContext = createContext();
 
-// Create the AppProvider
+
 const AppProvider = ({ children }) => {
   
   const [wishListState, setWishListState]= useState([])
@@ -21,6 +21,9 @@ const AppProvider = ({ children }) => {
   
     setCartListState(newPeople)
   }
+
+
+
   
 
   return (

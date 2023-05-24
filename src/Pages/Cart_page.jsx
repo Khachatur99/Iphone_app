@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
+import { Link } from "react-router-dom";
 import LayOut from "../components/Product/LayOut"
 import { useAppContext } from "../context/AppContext/AppContext";
 
@@ -10,9 +11,20 @@ function CartPage(){
     < div className="grid-container" >
         {cartListState.map((item)=>{
             return(
-                <div key={item.id}> <h1>{item.title}</h1><img style={{width: '150px'}} src={item.image} />   
+                <div className="Product" key={item.id}>
+                    <Link to={`/product/${item.id}`}>
+                <img  src={item.image} />   
+                </Link> 
+                <div className="text_container">
+        <span className="title">{item.title}</span>
+        <span className="price">{item.price}</span>
+      </div>
+      <span>{item.rating.rate}</span>
         
-                <button onClick={() => removehandler2(item)}>Remove</button>
+                <button onClick={() => 
+                 removehandler2(item)}
+                 className="add_cart"
+                > Remove </button>
                </div>  
             )
         })}

@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { useEffect, useState } from "react";
 
 import Product from "../components/Product/Product";
@@ -5,13 +6,15 @@ import LayOut from "../components/Product/LayOut";
 import { useAppContext } from "../context/AppContext/AppContext";
 
 
+
+
 function HomePage() {
   
-  // const [allProducts, setAllProducts] = useState([]);
+
   const [category, setCategory] = useState("All");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const { setCartListState, cartListState, setWishListState, allProducts, setAllProducts } = useAppContext();
+  const { setCartListState,wishListState, cartListState, setWishListState, allProducts, setAllProducts } = useAppContext();
 
 
 
@@ -35,15 +38,20 @@ function HomePage() {
   }, [allProducts, category]);
 
   const addCart = (item) => {
-  setCartListState((prevCart) => {
-       return [...prevCart, item]
-    });
+      if(!cartListState.includes(item)){
+          setCartListState([...cartListState, item])
+      }
     }
-  
+   
+   
   const addWishList = (item) => {
-    setWishListState((prevCart) => {
-      return [...prevCart, item];
-    });
+
+    if(!wishListState.includes(item)){
+      setWishListState([...wishListState, item])
+  }
+    // setWishListState((prevCart) => {
+    //   return [...prevCart, item];
+    // });
   };
   
   return (
