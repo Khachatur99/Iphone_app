@@ -18,16 +18,16 @@ const AppProvider = ({ children }) => {
 
   const removehandler2 = (item) => {
     const newPeople = cartListState.filter((person) => person.id !== item.id);
-  
     setCartListState(newPeople)
   }
+  const toCard = (item)=>{
+    const addToCard = cartListState.filter((person)=> person.id !== item.id) 
+    setCartListState(addToCard)
 
-
-
-  
+  }
 
   return (
-    <AppContext.Provider value={{wishListState, setWishListState, cartListState, setCartListState, allProducts, setAllProducts, removehandler1, removehandler2 }}>
+    <AppContext.Provider value={{wishListState, setWishListState, cartListState, setCartListState, allProducts, setAllProducts, removehandler1, removehandler2, toCard }}>
       {children}
     </AppContext.Provider>
   );

@@ -13,6 +13,7 @@ function Product({
   hideActions,
 
 }) {
+
   return (
     <div className="Product">
       <Link to={`product/${id}`}>
@@ -23,12 +24,12 @@ function Product({
         <span className="price">{price}</span>
       </div>
       <span>{rating}</span>
+      <button className="add_cart" onClick={addCart}>
+            Add to Cart
+          </button>
 
       {!hideActions && (
         <>
-          <button className="add_cart" onClick={addCart}>
-            Add to Cart
-          </button>
           <button className="Wish_List" onClick={addWishList}>
             {" "}
             Wishlist{" "}
