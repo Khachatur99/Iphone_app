@@ -20,7 +20,7 @@ export default function Product_Page() {
   }, [param.id]);
 
   return (
-    <LayOut>
+    <LayOut hideFilter >
       
         {[product].map((item) => {
           return (

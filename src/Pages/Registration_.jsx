@@ -7,8 +7,8 @@ function RegistrPage() {
   const [password, setPassword] = useState("");
 
   const login = () => {
-    localStorage.setItem("username", mail);
-    localStorage.setItem("password", password);
+    localStorage.setItem(`${mail}`, mail);
+    localStorage.setItem(`${password}`, password);
   };
 
   const mailChange = (evt)=>{
@@ -18,13 +18,16 @@ function RegistrPage() {
     setPassword(evt.target.value)
   } 
 
+
+
   return (
     <>
+    
       <LayOut hideFilter>
         <h3 className="h3_sign"> Sign In</h3>
         <div className="Reg_page">
           <button className="icon_button"></button>
-          <form autoComplete="off" onSubmit={(evt) => evt.preventDefault}>
+          <form autoComplete="on" onSubmit={(evt) => evt.preventDefault}>
             <input className="Email_"
              placeholder=" Email"
              type="email" 
