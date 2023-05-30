@@ -10,7 +10,6 @@ function LayOut({ category, setCategory, children, hideFilter}) {
   const [ , setFilteredProducts] = useState([]);
   const [registr, setRegistr] = useState(false)
  const { cartListState, wishListState, }=useAppContext()
-  
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => {
@@ -80,7 +79,7 @@ function LayOut({ category, setCategory, children, hideFilter}) {
             {registr && <div>
               <h4>Welcome</h4>
              <span>To access wishlist or cart</span> 
-             <Link to="/Registration">
+             <Link to="/SignInPage">
              <button>Sign In</button>
              </Link>
 

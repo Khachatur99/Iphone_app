@@ -37,18 +37,31 @@ function HomePage() {
     }
   }, [allProducts, category]);
 
+
   const addCart = (item) => {
-      if(!cartListState.includes(item)){
-          setCartListState([...cartListState, item])
-      }
+    const isObjectInArray = cartListState.some(arr => arr.id === item.id);
+    if (!isObjectInArray) {
+     return setCartListState((prevCart)=>{
+        return [...prevCart, item]
+     })
     }
+    return cartListState
    
+    }
    
   const addWishList = (item) => {
 
-    if(!wishListState.includes(item)){
-      setWishListState([...wishListState, item])
-  }
+    const isObjectInArray = wishListState.some(arr => arr.id === item.id);
+    if (!isObjectInArray) {
+     return setWishListState((prevCart)=>{
+        return [...prevCart, item]
+     })
+    }
+    return wishListState
+
+  //   if(!wishListState.includes(item)){
+  //     setWishListState([...wishListState, item])
+  // }
     // setWishListState((prevCart) => {
     //   return [...prevCart, item];
     // });

@@ -7,7 +7,6 @@ function WishList() {
   const { wishListState, cartListState, setCartListState, removehandler1, } =
     useAppContext();
   const addCart = (item) => {
-    console.log(item)
     if (!cartListState.includes(item)) {
       setCartListState([...cartListState, item]);
     }
@@ -27,13 +26,13 @@ function WishList() {
                 <span className="price">{item.price}</span>
               </div>
               <span>{item.rating.rate}</span>
-              <button className="add_cart" onClick={addCart}>
+              <button className="add_cart" onClick={()=>addCart(item)}>
                 Add to Cart
               </button>
 
               <button onClick={() => removehandler1(item)} className="add_cart">
-                {" "}
-                Remove{" "}
+                
+                Remove
               </button>
             </div>
           );
