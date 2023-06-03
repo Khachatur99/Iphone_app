@@ -2,9 +2,10 @@
 import { Link } from "react-router-dom";
 import LayOut from "../components/Product/LayOut";
 import { useAppContext } from "../context/AppContext/AppContext";
-import { useState } from "react";
+import { useState, } from "react";
+import Amount from "../components/Product/Amount";
 
-function CartPage() {
+function  CartPage() {
   const { cartListState, removehandler2 } = useAppContext();
   const [count, setCount] = useState(1)
   const increment = () => {
@@ -16,18 +17,24 @@ function CartPage() {
       setCount((prev) => prev - 1);
     }
   };
+
+
+
   return (
     <LayOut hideFilter>
       <div className="grid-container">
+      <Amount/>
+
         {cartListState.map((item) => {
           return (
+           
             <div className="Product" key={item.id}>
               <Link to={`/product/${item.id}`}>
                 <img src={item.image} />
               </Link>
               <div className="text_container">
                 <span className="title">{item.title}</span>
-                <span className="price">{item.price}</span>
+                <span className="price">{item.price}$</span>
               </div>
 
               <button onClick={() => removehandler2(item)} className="add_cart">
@@ -41,9 +48,11 @@ function CartPage() {
             </div>
           );
         })}
+        
       </div>
     </LayOut>
   );
 }
+
 
 export { CartPage };

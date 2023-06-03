@@ -23,7 +23,7 @@ function WishList() {
               </Link>
               <div className="text_container">
                 <span className="title">{item.title}</span>
-                <span className="price">{item.price}</span>
+                <span className="price">{item.price}$</span>
               </div>
               <span>{item.rating.rate}</span>
               <button className="add_cart" onClick={()=>addCart(item)}>

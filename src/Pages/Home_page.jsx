@@ -1,5 +1,5 @@
 /* eslint-disable array-callback-return */
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 import Product from "../components/Product/Product";
 import LayOut from "../components/Product/LayOut";
@@ -8,7 +8,7 @@ import { useAppContext } from "../context/AppContext/AppContext";
 
 
 
-function HomePage() {
+export default function HomePage() {
   
 
   const [category, setCategory] = useState("All");
@@ -59,13 +59,9 @@ function HomePage() {
     }
     return wishListState
 
-  //   if(!wishListState.includes(item)){
-  //     setWishListState([...wishListState, item])
-  // }
-    // setWishListState((prevCart) => {
-    //   return [...prevCart, item];
-    // });
   };
+
+
   
   return (
    <>
@@ -94,5 +90,5 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+
 

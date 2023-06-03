@@ -21,7 +21,7 @@ function Product({
       </Link>
       <div className="text_container">
         <span className="title">{title}</span>
-        <span className="price">{price}</span>
+        <span className="price">{price}$</span>
       </div>
       <span>{rating}</span>
       <button className="add_cart" onClick={addCart}>
